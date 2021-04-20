@@ -1,8 +1,7 @@
 ---
 layout: post
 title: How to use UIViewController with SwiftUI Custom TabBar
-gh-repo: daattali/beautiful-jekyll
-tags: [test]
+subtitle: Each post also has a subtitle, but i couldn't think of one
 comments: true
 ---
 
