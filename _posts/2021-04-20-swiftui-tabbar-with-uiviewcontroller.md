@@ -2,6 +2,7 @@
 layout: post
 title: How to use UIViewController with SwiftUI Custom TabBar
 subtitle: Each post also has a subtitle, but i couldn't think of one
+tags: [ios, swiftui, swift, uikit]
 comments: true
 ---
 
