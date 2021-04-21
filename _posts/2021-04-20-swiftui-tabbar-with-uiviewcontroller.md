@@ -35,6 +35,21 @@ func start() {
 
 ## Use a Custom SwiftUI TabBar with UIViewController as child
 
+First let's create a struct to represent the selected and normal state of the tab bar item
+
+``` swift
+public struct BottomBarItem {
+    public let selected: String
+    public let unselected: String
+    
+    public init(selected: String, unselected: String) {
+        self.selected = selected
+        self.unselected = unselected
+    }
+}
+```
+
+Feel free to add more properties to customize the **BottomBarItem**.
 
 ``` swift
 struct ContentView: View {
