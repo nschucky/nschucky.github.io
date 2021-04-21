@@ -33,6 +33,46 @@ func start() {
 }
 ```
 
+## Use a Custom SwiftUI TabBar with UIViewController as child
+
+
+``` swift
+struct ContentView: View {
+
+    let items: [BottomBarItem] = [
+        BottomBarItem(selected: "house.fill", unselected: "house"),
+        BottomBarItem(selected: "gamecontroller.fill", unselected: "gamecontroller"),
+        BottomBarItem(selected: "car.fill", unselected: "car")
+    ]
+    
+    @State public var selectedIndex: Int = 0
+    
+    private let viewList = [AnyView(FloatingView()),
+                            AnyView(RanOutOfIdeasView()),
+                            AnyView(LastView())]
+    
+    
+    var body: some View {
+        ZStack {
+            viewList[selectedIndex]
+            VStack {
+                Spacer()
+                ZStack {
+                    BottomBar(selectedIndex: $selectedIndex, items: items)
+                        .cornerRadius(20)
+                        .shadow(color: Color.black.opacity(0.1), radius: 10,
+                                x: 10,
+                                y: 5)
+                }.padding(EdgeInsets(top: 0,
+                                     leading: 40,
+                                     bottom: 20,
+                                     trailing: 40))
+            }
+        }
+    }
+}
+```
+
 ## Use a Custom SwiftUI TabBar with **UIViewController** as child
 
 ## Avoid calling `viewDidLoad` when switching tabs
