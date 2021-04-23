@@ -90,6 +90,82 @@ struct ContentView: View {
 
 ## Use a Custom SwiftUI TabBar with **UIViewController** as child
 
+First let's create a struct to represent the selected and normal state of the tab bar item
+
+``` swift
+
+public  struct  BottomBarItem {
+	public  let selected: String
+	public  let unselected: String
+
+	public  init(selected: String, unselected: String) {
+		self.selected = selected
+		self.unselected = unselected
+	}
+}
+
+```
+
+Feel free to add more properties to customize the **BottomBarItem**.
+
+To create the actual TabBar, We'll use a a View that takes the `selectedIndex` and an array of **BottomBarItem's** and setup the layout for the TabBar
+
+``` swift
+public  struct  BottomBar : View {
+	@Binding  public  var  selectedIndex: Int
+	public  let  items: [BottomBarItem]
+	
+	public init(selectedIndex: Binding<Int>, items: [BottomBarItem]) {
+		self._selectedIndex = selectedIndex
+		self.items = items
+	}
+
+	func itemView(at index: Int) -> some View {
+		Button(action: {
+			self.selectedIndex = index
+		}) {
+			BottomBarItemView(isSelected: index == selectedIndex, item: items[index])
+		}
+	}
+
+	public  var  body: some  View {
+		ZStack {
+			HStack(alignment: .center) {
+				Spacer()
+				self.itemView(at: 0)
+				Spacer()
+				self.itemView(at: 1)
+				Spacer()
+				self.itemView(at: 2)
+				Spacer()
+			}.padding([.horizontal]).padding(.bottom,0).padding(.top,0)
+		}
+		.background(Color.black)
+	}
+}
+```
+
+Now, you'll have an opportunity to customize each tab bar item, using the **BottomBarItem**, you can add UI Components and set them based on the model's properties:
+
+``` swift
+public  struct  BottomBarItemView: View {
+	public  let  isSelected: Bool
+	public  let  item: BottomBarItem
+	
+	public  var  body: some  View {
+		HStack {
+			Image(systemName: isSelected ? item.selected : item.unselected)
+			.imageScale(.large)
+		}
+		.padding()
+	}
+}
+```
+
+Finally, to display the TabBar  we will create another view 
+
+<script src="https://gist.github.com/nschucky/2ce80c2cc4a69fd1322735d4b3df689c.js"></script>
+
 ## Avoid calling `viewDidLoad` when switching tabs
 
 If your **UIViewController** makes a network request on `viewDidLoad`, you'll probably want to avoid reloading (or re-rendering) it when you change tabs
