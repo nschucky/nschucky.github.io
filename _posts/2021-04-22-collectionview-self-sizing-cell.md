@@ -6,9 +6,6 @@ tags: [ios, swiftui, swift, uikit]
 comments: true
 ---
 
-> repeating the title cause i'm tired
-# Programmatically UICollectionViewCell with dynamic height - the lazy way
-
 > this post was inspired by Giuseppe's article [Self-sizing UICollectionViewCell: the quickest and simplest way](https://medium.com/@giusecapo/self-sizing-uicollectionviewcell-the-quickest-and-simplest-way-94e8d1c89594), I'm basically copying the dude's post, but without storyboards
 
 
