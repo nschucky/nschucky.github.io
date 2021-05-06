@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: post
 title: How to use UIViewController with a SwiftUI Custom TabBar
 subtitle: Clever subtitle to come...
@@ -170,4 +170,4 @@ Finally, to display the TabBar  we will create another view
 
 If your **UIViewController** makes a network request on `viewDidLoad`, you'll probably want to avoid reloading (or re-rendering) it when you change tabs
 
-> ***Comrades,** constructive and negative feedback are deeply appreciated, I'm also accepting tips to quit smoking.*
+> ***Comrades,** constructive and negative feedback are deeply appreciated, I'm also accepting tips to quit smoking.* -->
