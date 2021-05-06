@@ -68,3 +68,5 @@ In your cell's `init(frame: CGRect)` , and you should be good to go. (🔥)
 Still finishing this article, sorry if you ended up here., check my repository with the [Project code](https://github.com/nschucky/SarcasticCollectionView).
 
 Again careful with that code comrades  😬😬😬
+
+Accepting positive, negative and other kinds of feedback (like venmo @nschucky).
