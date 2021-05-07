@@ -20,9 +20,19 @@
   ></div>
 {% endif %}
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-311NENWJ6F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-311NENWJ6F');
+</script>
+
 <header class="header-section {% if page.cover-img %}has-img{% endif %}">
 {% if page.cover-img %}
-<div class="big-img intro-header">
+<div class="big-img intro-header" id="header">
   <div class="container-md">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
