@@ -226,5 +226,5 @@ plugins:
 
 jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
-    id: 160173501          # Required - replace with your tracking id
+    id: G-311NENWJ6F          # Required - replace with your tracking id
     anonymizeIp: false
